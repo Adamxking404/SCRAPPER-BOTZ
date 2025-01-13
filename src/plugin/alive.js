@@ -17,8 +17,8 @@ const alive = async (m, Matrix) => {
   if (['alive', 'uptime', 'runtime'].includes(cmd)) {
     const width = 800;
     const height = 500;
-    const image = new Jimp(width, height, 'black');
-    const font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
+    const image = new Jimp(width, height, 'white');
+    const font = await Jimp.loadFont(Jimp.FONT_SANS_128_BLACK);
     const textMetrics = Jimp.measureText(font, timeString);
     const textHeight = Jimp.measureTextHeight(font, timeString, width);
     const x = (width / 2) - (textMetrics / 2);
@@ -26,27 +26,27 @@ const alive = async (m, Matrix) => {
     image.print(font, x, y, timeString, width, Jimp.HORIZONTAL_ALIGN_CENTER | Jimp.VERTICAL_ALIGN_MIDDLE);
     const buffer = await image.getBufferAsync(Jimp.MIME_PNG);
     
-    const uptimeMessage = `*🤖 ETHIX-MD Status Overview*
-_________________________________________
+    const uptimeMessage = `*🤪 ආ…පැටියෝ,කොහොමද?*
+___________________________________
 
-*📆 ${days} Day(s)*
-*🕰️ ${hours} Hour(s)*
-*⏳ ${minutes} Minute(s)*
-*⏲️ ${seconds} Second(s)*
-_________________________________________
+* *📆 ${days} දවස්*
+* *🕰️ ${hours} පැය*
+* *⏳ ${minutes} මිනිත්තු*
+* *⏲️ ${seconds} තත්පර*
+___________________________________
 `;
     
     const buttons = [
       {
         "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
+        "nonbuttonParamsJson": JSON.stringify({
           display_text: "MENU",
           id: `${prefix}menu`
         })
       },
       {
         "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
+        "nonbuttonParamsJson": JSON.stringify({
           display_text: "PING",
           id: `${prefix}ping`
         })
@@ -65,7 +65,7 @@ _________________________________________
               text: uptimeMessage
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "© ᴘᴏᴡᴇʀᴅ ʙʏ ᴇᴛʜɪx-ᴍᴅ"
+              text: "© ᴘᴏᴡᴇʀᴅ ʙʏ sᴄʀᴀᴘᴘᴇʀ-ᴍᴅ™"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...(await prepareWAMessageMedia({ image: buffer }, { upload: Matrix.waUploadToServer })),
@@ -83,7 +83,7 @@ _________________________________________
               isForwarded: true,
               forwardedNewsletterMessageInfo: {
                 newsletterJid: '120363249960769123@newsletter',
-                newsletterName: "Ethix-MD",
+                newsletterName: "Scrapper-MD",
                 serverMessageId: 143
               }
             }
