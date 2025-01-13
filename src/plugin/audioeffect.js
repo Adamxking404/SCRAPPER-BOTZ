@@ -43,7 +43,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
       return m.reply(`Reply to the audio you want to change with a caption *${prefix + cmd}*`);
     }
 
-    m.reply('Please wait...');
+    m.reply('මඳක් රැඳී සිටින්න...');
     const media = await m.quoted.download();
     const mediaPath = `./${getRandom('.webm')}`;
     fs.writeFileSync(mediaPath, media);
@@ -53,7 +53,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
       fs.unlinkSync(mediaPath);
       if (err) {
         console.error('Error:', err);
-        return m.reply('An error occurred while processing the audio.');
+        return m.reply('❌An error occurred while processing the audio.\nඔන්න ඕක තමයි ප්‍රශ්නේ🥲');
       }
       const buff = fs.readFileSync(outputPath);
       gss.sendMessage(m.from, { audio: buff, mimetype: 'audio/mpeg' }, { quoted: m });
@@ -61,7 +61,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
     });
   } catch (e) {
     console.error('Error:', e);
-    m.reply('An error occurred while processing the command.');
+    m.reply('❌An error occurred while processing the command.\nඔන්න ඕක තමයි ප්‍රශ්නේ🥲');
   }
 };
 
