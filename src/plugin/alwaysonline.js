@@ -8,17 +8,17 @@ const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0
 const text = m.body.slice(prefix.length + cmd.length).trim();
 
   if (cmd === 'alwaysonline') {
-    if (!isCreator) return m.reply("*📛 THIS IS AN OWNER COMMAND*");
+    if (!isCreator) return m.reply("*📛 මෙය OWNER විධානයකි.*");
     let responseMessage;
 
     if (text === 'on') {
       config.ALWAYS_ONLINE = true;
-      responseMessage = "Always Online has been enabled.";
+      responseMessage = "Always Online සක්‍රීය කරන ලදී ✅.";
     } else if (text === 'off') {
       config.ALWAYS_ONLINE = false;
-      responseMessage = "Always Online has been disabled.";
+      responseMessage = "Always Online අක්‍රීය කරන ලදී ❎.";
     } else {
-      responseMessage = "Usage:\n- `alwaysonline on`: Enable Always Online\n- `alwaysonline off`: Disable Always Online";
+      responseMessage = "Usage:\n- `.alwaysonline on`: Always Online සක්‍රීය කිරීමට.\n- `.alwaysonline off`: Always Online අක්‍රීය කිරීමට.";
     }
 
     try {
