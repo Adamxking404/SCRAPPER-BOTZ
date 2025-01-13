@@ -9,23 +9,23 @@ const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0
 const text = m.body.slice(prefix.length + cmd.length).trim();
 
   if (cmd === 'anticall') {
-    if (!isCreator) return m.reply("*📛 THIS IS AN OWNER COMMAND*");
+    if (!isCreator) return m.reply("*📛 මෙය OWNER විධානයකි*");
     let responseMessage;
 
     if (text === 'on') {
       config.REJECT_CALL = true;
-      responseMessage = "Anti-Call has been enabled.";
+      responseMessage = "Anti-Call සක්‍රීය කරන ලදී ✅.";
     } else if (text === 'off') {
       config.REJECT_CALL = false;
-      responseMessage = "Anti-Call has been disabled.";
+      responseMessage = "Anti-Call අක්‍රීය කරන ලදී ❎.";
     } else {
-      responseMessage = "Usage:\n- `anticall on`: Enable Anti-Call\n- `anticall off`: Disable Anti-Call";
+      responseMessage = "Usage:\n- `anticall on`: Anti-Call සක්‍රීය වන ලදී ✅\n- `anticall off`: Anti-Call අක්‍රිය වන ලදී ❎";
     }
 
     try {
       await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     } catch (error) {
-      console.error("Error processing your request:", error);
+      console.error("❌Error processing your request:\nඔන්න ඕක තමයි ප්‍රශ්නෙ🥲", error);
       await Matrix.sendMessage(m.from, { text: 'Error processing your request.' }, { quoted: m });
     }
   }
