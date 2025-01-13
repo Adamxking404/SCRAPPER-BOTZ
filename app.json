@@ -1,0 +1,87 @@
+{
+  "name": "whatsapp-bot (Scrapper-MD)",
+  "description": "Scrapper-MD - A powerful WhatsApp bot.",
+  "keywords": [
+    "whatsapp bot",
+    "scrapper-md",
+    "nodejs bot"
+  ],
+  "repository": "https://github.com/Adamxking404/SCRAPPER-BOTZ",
+  "stack": "container",
+  "env": { 
+    "SESSION_ID": {
+      "description": "Your session ID for WhatsApp Web.",
+      "required": true,
+      "value": ""
+    },
+    "MODE": {
+      "description": "Bot mode: public or self.",
+      "required": true,
+      "value": "public"
+    },
+    "AUTO_STATUS_SEEN": {
+      "description": "Enable auto status viewing. Set to 'true' to enable.",
+      "required": false,
+      "value": "true"
+    },
+    "AUTO_READ": {
+      "description": "Enable auto message reading. Set to 'true' to enable.",
+      "required": false,
+      "value": "true"
+    },
+    "AUTO_TYPING": {
+      "description": "Enable auto typing status. Set to 'true' to enable.",
+      "required": false,
+      "value": "false"
+    },
+    "AUTO_RECORDING": {
+      "description": "Enable auto recording status. Set to 'true' to enable.",
+      "required": false,
+      "value": "false"
+    },
+    "ALWAYS_ONLINE": {
+      "description": "Keep the bot always online. Set to 'true' to enable.",
+      "required": false,
+      "value": "false"
+    },
+    "AUTO_BLOCK": {
+      "description": "Enable auto-blocking for numbers starting with '212'. Set to 'true' to enable.",
+      "required": false,
+      "value": "false"
+    },
+    "REJECT_CALL": {
+      "description": "Automatically reject incoming calls. Set to 'true' to enable.",
+      "required": false,
+      "value": "false"
+    },
+    "AUTO_STATUS_REPLY": {
+      "description": "Send an automatic reply after viewing a status. Set to 'true' to enable.",
+      "required": false,
+      "value": "false"
+    },
+    "STATUS_READ_MSG": {
+      "description": "Message to send when replying to a status automatically.",
+      "required": false,
+      "value": "🥰ඔයාගේ status බැලුවා ඈ ✅"
+    },
+    "PREFIX": {
+      "description": "The command prefix for the bot. Default is '.'.",
+      "required": false,
+      "value": "."
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
