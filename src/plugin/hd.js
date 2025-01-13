@@ -15,18 +15,18 @@ const tohd = async (m, gss) => {
 
   if (validCommands.includes(cmd)) {
     if (!m.quoted || m.quoted.mtype !== 'imageMessage') {
-      return m.reply(`*Send/Reply with an Image to Enhance Your Picture Quality ${prefix + cmd}*`);
+      return m.reply(`*❌ ඡායාරූපයක් mention කරන්න ${prefix + cmd}*`);
     }
     
     const media = await m.quoted.download();
 
     try {
         let proses = await remini(media, "enhance");
-        gss.sendMessage(m.from, { image: proses, caption: `> *Hey ${m.pushName} Here Is Your Enhanced Image*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴇᴛʜɪx-ᴍᴅ*` }, { quoted: m });
+        gss.sendMessage(m.from, { image: proses, caption: `> *හලෝ ${m.pushName} මෙන්න ඔයාගේ high quality 4to එක*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ sᴄʀᴀᴘᴘᴇʀ-ᴍᴅ*` }, { quoted: m });
       
     } catch (error) {
-      console.error('Error processing media:', error);
-      m.reply('Error processing media.');
+      console.error('❌Error processing media:\nඔන්න ඕක තමයි ප්‍රශ්නේ🥲', error);
+      m.reply('❌Error processing media.\nඔන්න ඕක තමයි ප්‍රශ්නේ🥲');
     }
   }
 };
