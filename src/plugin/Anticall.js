@@ -19,7 +19,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
       config.REJECT_CALL = false;
       responseMessage = "Anti-Call අක්‍රීය කරන ලදී ❎.";
     } else {
-      responseMessage = "Usage:\n- `anticall on`: Anti-Call සක්‍රීය වන ලදී ✅\n- `anticall off`: Anti-Call අක්‍රිය වන ලදී ❎";
+      responseMessage = "Usage:\n- `.anticall on`: Anti-Call සක්‍රීය කිරීමට.\n- `.anticall off`: Anti-Call අක්‍රිය කිරීමට.";
     }
 
     try {
