@@ -2,7 +2,7 @@ const fs = require("fs");
 require("dotenv").config();
 
 const config = {
-  SESSION_ID: process.env.SESSION_ID || "PRABATH-MD~lvUXCbRY#OTe-7OK8fhvR42KwxuIYxqEFnGno7zuk2KbedF5eJjo",
+  SESSION_ID: process.env.SESSION_ID || "SCRAPPER-MD=KvAS0BLD#vmEWyn1QevVs_3qPLE5ln7-waAK2lVSHYm69g6JYNrg",
   PREFIX: process.env.PREFIX || '.', // Command prefix for the bot
   AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN !== undefined ? process.env.AUTO_STATUS_SEEN === 'true' : true, // Automatically mark statuses as seen
   AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY !== undefined ? process.env.AUTO_STATUS_REPLY === 'true' : true, // Automatically reply to statuses
